@@ -15,7 +15,7 @@ def get_authors():
 
 
 @main.route('/<id>')
-def get_movie(id):
+def get_author(id):
     try:
         author = AuthorModel.get_author(id)
         if author != None:
@@ -27,7 +27,7 @@ def get_movie(id):
 
 
 @main.route('/', methods=['POST'])
-def add_movie():
+def add_author():
     try:
         first_name = request.json['first_name']
         last_name = request.json['last_name']
@@ -44,7 +44,7 @@ def add_movie():
 
 
 @main.route('/<id>', methods=['DELETE'])
-def delete_movie(id):
+def delete_author(id):
     try:
         author = Author(id)
 
@@ -60,7 +60,7 @@ def delete_movie(id):
 
 
 @main.route('/<id>', methods=['PUT'])
-def update_movie(id):
+def update_author(id):
     try:
         first_name = request.json['first_name']
         last_name = request.json['last_name']

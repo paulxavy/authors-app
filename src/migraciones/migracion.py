@@ -11,7 +11,7 @@ user = config('PGSQL_USER')
 password = config('PGSQL_PASSWORD')
 database = config('PGSQL_DATABASE')
 port = config('PGSQL_PORT')
-time.sleep(5)
+time.sleep(25)
 backend = get_backend(f"postgresql://{user}:{password}@{host}:{port}/{database}")
 migrations_folder = "src/migraciones/migrations"
 migrations = read_migrations(migrations_folder)
